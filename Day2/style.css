@@ -60,3 +60,26 @@ header{
 #data_request_form, #query-output{
     display: none;
 }
+
+.query-box .title{
+    background-color: antiquewhite;
+    border-radius: 10px 10px 0 0;
+    padding: 0 5px;
+}
+
+.query-box{
+    display: none;
+    width: 210px;
+    height: 240px;
+    max-height: 240px;
+    border: 1px solid #a04577; 
+    position: absolute;
+    top: 6%;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.container-box{
+    margin: auto;
+    padding: auto;
+}

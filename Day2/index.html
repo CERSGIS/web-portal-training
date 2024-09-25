@@ -53,14 +53,19 @@
 
       <!-- Main context area -->
       <div id="main">
+        <!-- Query Toolbox -->
+        <div class="query-box">
+          <h3 class="title">Query Toolbox</h3>
+          <div>Query Toolbox</div>
+        </div>
 
-        <!-- Query Container -->
-        <div class="container pt-4" id="query-output">
+        <!-- Query Output Container -->
+        <div class="container container-box" id="query-output">
           <h1>To house your query output</h1>
         </div>
 
         <!-- Data request form -->
-        <div class="container pt-4" id="data_request_form">
+        <div class="container container-box" id="data_request_form">
           <form>
             <div class="row mt-2">
               <div class="mb-4 col-6">
@@ -128,10 +133,12 @@
       $("#request-form").click(function () {
         $("#data_request_form").css("display", "block");
         $("#query-output").css("display", "none");
+        $(".query-box").css("display", "none");
       });
 
       $("#query").click(function () {
         $("#data_request_form").css("display", "none");
+        $(".query-box").css("display", "block");
         $("#query-output").css("display", "block");
       });
     </script>
