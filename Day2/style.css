@@ -56,3 +56,7 @@ header{
 .side-nav-icons{
     padding: 0 15px;
 }
+
+#data_request_form{
+    display: none;
+}
