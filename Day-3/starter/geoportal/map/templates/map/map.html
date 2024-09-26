@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SERVIR GEOPORTAL TRAINING</title>
+    <title>SERVIR GEOPORTAL TRAINING MAP</title>
     <link rel="stylesheet" href="/static/home/style.css" />
     <!-- BOOTSTRAP STYLE CDN -->
     <link
@@ -25,20 +25,22 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- LEAFLET.JS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-    crossorigin=""/>
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""
+    />
 
     <style>
-      #map {
-        height: 100%;
-      }
+        #map {
+            height:100%;
+        }
     </style>
   </head>
 
   <body>
     <header>
-      <h2>SERVIR GEOPORTAL TRAINING</h2>
+      <h2>SERVIR GEOPORTAL TRAINING MAP</h2>
     </header>
 
     <div id="main-container">
@@ -59,19 +61,12 @@
           </div>
           <p>Query</p>
         </div>
-
-        <!-- <div class="side-nav-button">
-          <div class="side-nav-icons">
-            <i class="fa-solid fa-map"></i>
-          </div>
-          <a href="/map">Map View</a>
-        </div> -->
       </div>
 
       <!-- Main context area -->
       <div id="main">
-
-        <div id="map"></div>
+        <!-- Map -->
+         <div id="map"></div>
 
         <!-- Query Toolbox -->
         <div class="query-box">
@@ -149,25 +144,10 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
-
-    <script>
-      var map = L.map('map').setView([8.218424, -1.353133],7);
-
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-
-      L.tileLayer.wms('http://127.0.0.1:8080/geoserver/wms', {
-        layers: "geoportal:Regional_Boundary",
-        format: "image/png",
-        transparent: true,
-      }).addTo(map);
-
-    </script>
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 
     <script>
       $("#request-form").click(function () {
@@ -181,6 +161,14 @@
         $(".query-box").css("display", "block");
         $("#query-output").css("display", "block");
       });
+    </script>
+    <script>
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
     </script>
   </body>
 </html>
